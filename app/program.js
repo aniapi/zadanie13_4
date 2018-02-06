@@ -1,5 +1,5 @@
 var os = require('os');
-var OSinfo = require('./OSinfo');
+var OSinfo = require('../modules/OSinfo');
 
 process.stdin.setEncoding('utf-8');
 process.stdin.on('readable', function() {
@@ -15,10 +15,29 @@ process.stdin.on('readable', function() {
                 process.stdout.write('hello!\n');
                 break;
             case '/getOSinfo':
-                OSinfo.print();
+               	OSinfo.print();
                 break;    
             default:
                 process.stderr.write('Wrong instruction!\n');
-        };
-    }
-});
+            };
+           }
+        });
+        
+  //       function getOSinfo() {
+  //           var type = os.type();
+  //           if(type === 'Darwin') {
+  //               type = 'OSX';
+  //           } else if(type === 'Windows_NT') {
+  //               type = 'Windows';
+  //           }
+  //           var release = os.release();
+  //           var cpu = os.cpus()[0].model;
+  //           var uptime = os.uptime();
+  //           var userInfo = os.userInfo();
+  //           console.log('System:', type);
+  //           console.log('Release:', release);
+  //           console.log('CPU model:', cpu);
+  //           console.log('Uptime: ~', (uptime / 60).toFixed(0), 'min');
+  //           console.log('User name:', userInfo.username);
+  //           console.log('Home dir:', userInfo.homedir);
+		// };
