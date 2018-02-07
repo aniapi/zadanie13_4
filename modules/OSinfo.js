@@ -1,4 +1,5 @@
 var os = require('os');
+var OSuptime = require('./OSuptime');
 
 function getOSinfo() {
     var type = os.type();
